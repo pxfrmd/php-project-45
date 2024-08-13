@@ -1,5 +1,10 @@
 #!/usr/bin/env php
 
-<?php 
-echo "Welcome to the Brain Games! \n";
+<?php
+use function BrainGames\Cli\welcome;
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+
+
+welcome();
 
