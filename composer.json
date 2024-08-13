@@ -5,8 +5,9 @@
         "psr-4": {
             "Hexlet\\Code\\": "src/"
         },
-        "files": 
+        "files": [
             "src/Cli.php"
+        ]
     },
     "bin": [
         "bin/brain-games"
