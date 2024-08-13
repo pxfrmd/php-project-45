@@ -2,8 +2,8 @@
 
 namespace BrainGames\Cli;
 
-use function сli\line;
-use function сli\prompt;
+use function Cli\line;
+use function Cli\prompt;
 
 function welcome()
 {
