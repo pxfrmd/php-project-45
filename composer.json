@@ -1,0 +1,21 @@
+{
+    "name": "hexlet/code",
+    "description": "first php-project on hexlet",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/brain-games"
+    ],
+    "authors": [
+        {
+            "name": "Evgenii Vlasov"
+        }
+    ],
+    
+    "license": "GPL-3.0-or-later",
+    
+    "require": {}
+}
