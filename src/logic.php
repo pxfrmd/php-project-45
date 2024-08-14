@@ -15,7 +15,7 @@ function welcome(): void
 
 $count = 0;
 
-while ($count <= 0) {
+while ($count < 3) {
 function brainEven(): void
 {   
     $randomNumber = rand(0, 100);
