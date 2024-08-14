@@ -14,6 +14,8 @@ function welcome(): void
 }
 
 $count = 0;
+
+while ($count <= 0) {
 function brainEven(): void
 {   
     $randomNumber = rand(0, 100);
@@ -37,7 +39,6 @@ function brainEven(): void
             echo "Congratulations, {$name}!";
         }
     }
-    
 }
-
+}
 
