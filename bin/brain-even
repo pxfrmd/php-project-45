@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+namespace logic;
+
+use function logic\welcome;
+use function logic\brainEven;
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+
+welcome();
+brainEven();
