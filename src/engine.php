@@ -1,5 +1,5 @@
 <?php
-namespace logic;
+namespace engine;
 use function Cli\line;
 use function Cli\prompt;
 
@@ -14,6 +14,15 @@ function welcome(): string
     return $name;
 }
 
+function engine()
+{
+    
+}
+
+function brainCalc()
+{
+
+}
 
 function brainEven(): void
 {   
