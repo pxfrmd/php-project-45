@@ -3,52 +3,34 @@ namespace engine;
 use function Cli\line;
 use function Cli\prompt;
 
-$name = "";
-$count = 0;
-function welcome(): string
+
+function welcome($rules): string
 {
-    global $name;
+    $name = "";
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
+    line(RULES);
     return $name;
 }
 
-function engine()
-{
-    
-}
-
-function brainCalc()
-{
-
-}
-
-function brainEven(): void
+function engine($rules, $gameData): void
 {   
-    global $count;
-    global $name;
-    while ($count < 3) {
-        $randomNumber = rand(1, 100);
-        echo "Answer \"yes\" if the number is even, otherwise answer \"no\".\n";
-        echo "Question: {$randomNumber}\n";
-        $typeOfRandomNumberIsEven = "yes";
-        if ($randomNumber % 2 !=0) {
-            $typeOfRandomNumberIsEven = "no";
-        }
+    $name = welcome(RULES);
+    $numberOfRounds = 3;
+    [$corectAnswer, $question] = $gameData;
+    while ($numberOfRounds > 0) {
+        line("Question: %s", $question);
         $answer = prompt("Your answer");
-        $answerCleaned = strtolower($answer);
-        if ($typeOfRandomNumberIsEven != $answerCleaned) {
-            echo "\"{$answerCleaned}\" is wrong answer ;(. Correct answer was \"{$typeOfRandomNumberIsEven}\". Let's try again, {$name}\n";
-            $count = 3;
+        if ($answer == $corectAnswer) {
+            echo "Correct!";
+            $numberOfRounds--;
         } else {
-            echo "Correct!\n";
-            $count++;
-            if ($count == 3) {
-                echo "Congratulations, {$name}!\n";
-            }
+            line("'%s' is wrong answer ;(. Correct answer was '%d'.", $answer, $corectAnswer);
+            $numberOfRounds = 0;
+            line ("Let's try again, %s", $name);
         }
     }
 }
-welcome();
-brainEven();
+
+
