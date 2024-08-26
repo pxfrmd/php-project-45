@@ -1,7 +1,6 @@
 <?php
-use function Cli\line;
-use function Cli\prompt;
-use function engine\engine;
+namespace BrainGames\Even;
+use function BrainGames\engine\engine;
 
 const RULES = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -18,5 +17,7 @@ function play()
 
 function isEven($question)
 {
-  return $question % 2 == 0;
+  return $question % 2 === 0;
 }
+
+play();

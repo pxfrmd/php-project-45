@@ -1,5 +1,5 @@
 <?php
-namespace engine;
+namespace BrainGames\engine;
 use function Cli\line;
 use function Cli\prompt;
 
@@ -10,27 +10,31 @@ function welcome($rules): string
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    line(RULES);
+    line($rules);
     return $name;
 }
 
-function engine($rules, $gameData): void
+function engine($rules, callable $gameData): void
 {   
-    $name = welcome(RULES);
+    $name = welcome($rules);
     $numberOfRounds = 3;
-    [$corectAnswer, $question] = $gameData;
     while ($numberOfRounds > 0) {
+        [$correctAnswer, $question] = $gameData();
         line("Question: %s", $question);
         $answer = prompt("Your answer");
-        if ($answer == $corectAnswer) {
-            echo "Correct!";
+        if ($answer === $correctAnswer) {
+            line ("Correct!");
             $numberOfRounds--;
+            if ($numberOfRounds === 0) {
+                line("Congratulations, $name!");
+            }
         } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%d'.", $answer, $corectAnswer);
+            line("'$answer' is wrong answer ;(. Correct answer was '$correctAnswer'.");
             $numberOfRounds = 0;
-            line ("Let's try again, %s", $name);
+            line ("Let's try again, $name");
         }
     }
+
 }
 
 
