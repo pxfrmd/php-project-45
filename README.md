@@ -7,3 +7,6 @@
 
 <a href="https://asciinema.org/a/dx97Rtzb88Dllnfo4JAbXKRma">Asciinema link for brain-calc</a>
 
+<a href="https://asciinema.org/a/IkY5AxlXhMPHTp0WYDJkOGZWT">Asciinema link for brain-gcd</a>
+
+

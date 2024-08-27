@@ -6,13 +6,16 @@
             "src/Cli.php",
             "src/engine.php",
             "src/Games/brain-even.php",
-            "src/Games/brain-calc.php"
+            "src/Games/brain-calc.php",
+            "src/Games/brain-gcd.php"
+
         ]
     },
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
-        "bin/brain-calc"
+        "bin/brain-calc",
+        "bin/brain-gcd"
     ],
     "authors": [
         {
