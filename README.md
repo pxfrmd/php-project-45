@@ -9,4 +9,7 @@
 
 <a href="https://asciinema.org/a/IkY5AxlXhMPHTp0WYDJkOGZWT">Asciinema link for brain-gcd</a>
 
+<a href="https://asciinema.org/a/xzB67cXPg2e4bpZcy2ZaXAeft">Asciinema link for brain-progression</a>
+
+
 
