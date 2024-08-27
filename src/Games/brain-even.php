@@ -8,7 +8,7 @@ function play()
 {   
     $gameData = function () {
       $question = rand(0, 100);
-      isEven($question) ? $correctAnswer = "yes" : $correctAnswer = "no";
+      $correctAnswer = isEven(($question));
       $gameData = [$correctAnswer, $question];
       return $gameData;
     };
@@ -17,7 +17,12 @@ function play()
 
 function isEven($question)
 {
-  return $question % 2 === 0;
+  if ($question % 2 === 0) {
+    return "yes";
+   }
+    else {
+     return "no";
+    }
 }
 
 play();

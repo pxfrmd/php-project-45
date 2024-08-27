@@ -27,11 +27,13 @@ function engine($rules, callable $gameData): void
             $numberOfRounds--;
             if ($numberOfRounds === 0) {
                 line("Congratulations, $name!");
+                exit;
             }
         } else {
             line("'$answer' is wrong answer ;(. Correct answer was '$correctAnswer'.");
             $numberOfRounds = 0;
             line ("Let's try again, $name");
+            exit;
         }
     }
 
