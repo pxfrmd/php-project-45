@@ -32,7 +32,7 @@ function engine($rules, callable $gameData): void
         } else {
             line("'$answer' is wrong answer ;(. Correct answer was '$correctAnswer'.");
             $numberOfRounds = 0;
-            line ("Let's try again, $name");
+            line ("Let's try again, $name!");
             exit;
         }
     }
