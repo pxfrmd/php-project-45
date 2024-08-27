@@ -5,12 +5,14 @@
         "files": [
             "src/Cli.php",
             "src/engine.php",
-            "src/Games/brain-even.php"
+            "src/Games/brain-even.php",
+            "src/Games/brain-calc.php"
         ]
     },
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ],
     "authors": [
         {

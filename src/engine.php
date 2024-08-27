@@ -22,7 +22,7 @@ function engine($rules, callable $gameData): void
         [$correctAnswer, $question] = $gameData();
         line("Question: %s", $question);
         $answer = prompt("Your answer");
-        if ($answer === $correctAnswer) {
+        if ($answer == $correctAnswer) {
             line ("Correct!");
             $numberOfRounds--;
             if ($numberOfRounds === 0) {
@@ -36,7 +36,6 @@ function engine($rules, callable $gameData): void
             exit;
         }
     }
-
 }
 
 
