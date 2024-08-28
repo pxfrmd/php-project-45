@@ -11,7 +11,6 @@ function play()
     $getGameData = function () {
         $question = rand(1, 101);
         isPrime($question) ? $correctAnswer = "yes" : $correctAnswer = "no";
-        $correctAnswer = isPrime($question);
         return [$correctAnswer, $question];
     };
     runGameLoop(RULES, $getGameData);
