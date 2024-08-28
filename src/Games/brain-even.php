@@ -17,7 +17,7 @@ function play()
     engine(RULES, $gameData);
 }
 
-function isEven($question)
+function isEven(int $question): string
 {
     if ($question % 2 === 0) {
         return "yes";

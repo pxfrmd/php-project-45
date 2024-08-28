@@ -20,7 +20,7 @@ function play()
     engine(RULES, $gameData);
 }
 
-function findingCorrectGCD($firstOperand, $secondOperand)
+function findingCorrectGCD(int $firstOperand, int $secondOperand): int
 {
     while (($firstOperand > 0) && ($secondOperand > 0)) {
         if ($firstOperand >= $secondOperand) {

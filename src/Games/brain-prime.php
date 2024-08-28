@@ -17,7 +17,7 @@ function play()
     engine(RULES, $gameData);
 }
 
-function isPrime($question)
+function isPrime(int $question): string
 {
     for ($i = 2; $i <= sqrt($question); $i++) {
         if ($question % $i == 0) {

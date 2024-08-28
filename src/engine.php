@@ -2,10 +2,10 @@
 
 namespace BrainGames\engine;
 
-use function Cli\line;
-use function Cli\prompt;
+use function cli\line;
+use function cli\prompt;
 
-function welcome($rules): string
+function welcome(string $rules): string
 {
     $name = "";
     line('Welcome to the Brain Games!');
@@ -15,7 +15,7 @@ function welcome($rules): string
     return $name;
 }
 
-function engine($rules, callable $gameData): void
+function engine(string $rules, callable $gameData): void
 {
     $name = welcome($rules);
     $numberOfRounds = 3;

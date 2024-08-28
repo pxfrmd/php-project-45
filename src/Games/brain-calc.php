@@ -20,7 +20,7 @@ function play()
     };
     engine(RULES, $gameData);
 }
-function operationResult($firstOperand, $operator, $secondOperand)
+function operationResult(int $firstOperand, string $operator, int $secondOperand)
 {
     switch ($operator) {
         case $operator === "+":
