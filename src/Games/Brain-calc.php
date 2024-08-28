@@ -2,32 +2,33 @@
 
 namespace BrainGames\Calc;
 
-use function BrainGames\engine\engine;
+use function BrainGames\engine\runGameLoop;
 
 const RULES = 'What is the result of the expression?';
 
 function play()
 {
-    $gameData = function () {
+    $getGameData = function () {
         $firstOperand = rand(0, 101);
         $secondOperand = rand(0, 101);
         $operatorsArr = ["+", "-", "*"];
         $operator = $operatorsArr[rand(0, 2)];
-        $question = $firstOperand . " " . $operator . " " . $secondOperand;
-        $correctAnswer = operationResult($firstOperand, $operator, $secondOperand);
-        $gameData = [$correctAnswer, $question];
-        return $gameData;
+        $question = "$firstOperand $operator $secondOperand";
+        $correctAnswer = returnResult($firstOperand, $operator, $secondOperand);
+        return [$correctAnswer, $question];
     };
-    engine(RULES, $gameData);
+    runGameLoop(RULES, $getGameData);
 }
-function operationResult(int $firstOperand, string $operator, int $secondOperand)
+function returnResult(int $firstOperand, string $operator, int $secondOperand): int
 {
-    switch ($operator) {
+    switch (true) {
         case $operator === "+":
             return $firstOperand + $secondOperand;
         case $operator === "-":
             return $firstOperand - $secondOperand;
         case $operator === "*":
             return $firstOperand * $secondOperand;
+        default:
+            return 0;
     }
 }

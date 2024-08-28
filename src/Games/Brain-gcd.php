@@ -2,7 +2,7 @@
 
 namespace BrainGames\GCD;
 
-use function BrainGames\engine\engine;
+use function BrainGames\engine\runGameLoop;
 
 const RULES = "Find the greatest common divisor of given numbers.";
 
@@ -14,10 +14,9 @@ function play()
         $secondOperand = rand(0, 101);
         $question = $firstOperand . " " . $secondOperand;
         $correctAnswer = findingCorrectGCD($firstOperand, $secondOperand);
-        $gameData = [$correctAnswer, $question];
-        return $gameData;
+        return [$correctAnswer, $question];
     };
-    engine(RULES, $gameData);
+    runGameLoop(RULES, $gameData);
 }
 
 function findingCorrectGCD(int $firstOperand, int $secondOperand): int

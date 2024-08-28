@@ -4,12 +4,12 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/engine.php",
-            "src/Games/brain-even.php",
-            "src/Games/brain-calc.php",
-            "src/Games/brain-gcd.php",
-            "src/Games/brain-progression.php",
-            "src/Games/brain-prime.php"
+            "src/Engine.php",
+            "src/Games/Brain-even.php",
+            "src/Games/Brain-calc.php",
+            "src/Games/Brain-gcd.php",
+            "src/Games/Brain-progression.php",
+            "src/Games/Brain-prime.php"
 
         ]
     },

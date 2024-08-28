@@ -5,36 +5,28 @@ namespace BrainGames\engine;
 use function cli\line;
 use function cli\prompt;
 
-function welcome(string $rules): string
+const NUMBER_OF_ROUNDS = 3;
+
+function runGameLoop(string $rules, callable $gameData): void
 {
-    $name = "";
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    line("Hello, $name");
     line($rules);
-    return $name;
-}
-
-function engine(string $rules, callable $gameData): void
-{
-    $name = welcome($rules);
-    $numberOfRounds = 3;
-    while ($numberOfRounds > 0) {
+    for ($i = 0; $i < NUMBER_OF_ROUNDS; $i++) {
         [$correctAnswer, $question] = $gameData();
-        line("Question: %s", $question);
+        line("Question: $question");
         $answer = prompt("Your answer");
         if ($answer == $correctAnswer) {
             line("Correct!");
-            $numberOfRounds--;
-            if ($numberOfRounds === 0) {
+            if ($i == 2 && $answer == $correctAnswer) {
                 line("Congratulations, $name!");
-                exit;
+                return;
             }
         } else {
             line("'$answer' is wrong answer ;(. Correct answer was '$correctAnswer'.");
-            $numberOfRounds = 0;
             line("Let's try again, $name!");
-            exit;
+            return;
         }
     }
 }
