@@ -23,11 +23,11 @@ function play()
 function operationResult($firstOperand, $operator, $secondOperand)
 {
     switch ($operator) {
-    case $operator === "+":
-        return $firstOperand + $secondOperand;
-    case $operator === "-":
-        return $firstOperand - $secondOperand;
-    case $operator === "*":
-        return $firstOperand * $secondOperand;
+        case $operator === "+":
+            return $firstOperand + $secondOperand;
+        case $operator === "-":
+            return $firstOperand - $secondOperand;
+        case $operator === "*":
+            return $firstOperand * $secondOperand;
     }
 }
