@@ -7,14 +7,14 @@ use function cli\prompt;
 
 const NUMBER_OF_ROUNDS = 3;
 
-function runGameLoop(string $rules, callable $gameData): void
+function runGameLoop(string $rules, callable $getGameData): void
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, $name");
     line($rules);
     for ($i = 0; $i < NUMBER_OF_ROUNDS; $i++) {
-        [$correctAnswer, $question] = $gameData();
+        [$correctAnswer, $question] = $getGameData();
         line("Question: $question");
         $answer = prompt("Your answer");
         if ($answer == $correctAnswer) {

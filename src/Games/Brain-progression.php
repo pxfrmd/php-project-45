@@ -5,14 +5,15 @@ namespace BrainGames\progression;
 use function BrainGames\engine\runGameLoop;
 
 const RULES = "What number is missing in the progression?";
+const PROGRESSION_LENGTH = 10;
 
 function play()
 {
-    $gameData = function () {
+    $getGameData = function () {
         $questionArr = [];
-        $randomMinNumber = rand(0, 20);
+        $randomMinNumber = rand(0, 20); // подобные штуки считаются магическими числами? название переменной вполне говорящее что к чему
         $randomProgressionStep = rand(2, 7);
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < PROGRESSION_LENGTH; $i++) {
             $questionArr[$i] = $randomMinNumber;
             $randomMinNumber = $randomMinNumber + $randomProgressionStep;
         }
@@ -22,5 +23,5 @@ function play()
         $question = implode(" ", $questionArr);
         return [$correctAnswer, $question];
     };
-    runGameLoop(RULES, $gameData);
+    runGameLoop(RULES, $getGameData);
 }

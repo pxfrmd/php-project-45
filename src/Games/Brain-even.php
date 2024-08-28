@@ -8,12 +8,12 @@ const RULES = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function play()
 {
-    $gameData = function () {
+    $getGameData = function () {
         $question = rand(0, 100);
         isEven($question) ? $correctAnswer = "yes": $correctAnswer = "no";
         return [$correctAnswer, $question];
     };
-        runGameLoop(RULES, $gameData);
+        runGameLoop(RULES, $getGameData);
 }
 
 

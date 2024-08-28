@@ -8,13 +8,13 @@ const RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function play()
 {
-    $gameData = function () {
+    $getGameData = function () {
         $question = rand(1, 101);
         isPrime($question) ? $correctAnswer = "yes" : $correctAnswer = "no";
         $correctAnswer = isPrime($question);
         return [$correctAnswer, $question];
     };
-    runGameLoop(RULES, $gameData);
+    runGameLoop(RULES, $getGameData);
 }
 
 function isPrime(int $question): bool

@@ -9,14 +9,14 @@ const RULES = "Find the greatest common divisor of given numbers.";
 
 function play()
 {
-    $gameData = function () {
+    $getGameData = function () {
         $firstOperand = rand(0, 101);
         $secondOperand = rand(0, 101);
-        $question = $firstOperand . " " . $secondOperand;
+        $question = "$firstOperand $secondOperand";
         $correctAnswer = findingCorrectGCD($firstOperand, $secondOperand);
         return [$correctAnswer, $question];
     };
-    runGameLoop(RULES, $gameData);
+    runGameLoop(RULES, $getGameData);
 }
 
 function findingCorrectGCD(int $firstOperand, int $secondOperand): int
