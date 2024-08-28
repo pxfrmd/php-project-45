@@ -10,7 +10,7 @@ function play()
 {
     $getGameData = function () {
         $question = rand(0, 100);
-        isEven($question) ? $correctAnswer = "yes": $correctAnswer = "no";
+        isEven($question) ? $correctAnswer = "yes" : $correctAnswer = "no";
         return [$correctAnswer, $question];
     };
         runGameLoop(RULES, $getGameData);
