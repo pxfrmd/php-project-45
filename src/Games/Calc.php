@@ -29,6 +29,6 @@ function returnResult(int $firstOperand, string $operator, int $secondOperand): 
         case "*":
             return $firstOperand * $secondOperand;
         default:
-            return null;    
+            return null;
     }
 }

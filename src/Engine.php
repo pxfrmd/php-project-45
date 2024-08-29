@@ -17,7 +17,7 @@ function runGameLoop(string $rules, callable $getGameData): void
         [$correctAnswer, $question] = $getGameData();
         line("Question: $question");
         $answer = prompt("Your answer");
-        if ($answer != $correctAnswer){
+        if ($answer != $correctAnswer) {
             line("'$answer' is wrong answer ;(. Correct answer was '$correctAnswer'.");
             line("Let's try again, $name!");
             return;
@@ -27,5 +27,5 @@ function runGameLoop(string $rules, callable $getGameData): void
             line("Congratulations, $name!");
             return;
         }
-    } 
+    }
 }
