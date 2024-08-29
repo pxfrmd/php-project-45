@@ -2,11 +2,11 @@
 
 namespace BrainGames\prime;
 
-use function BrainGames\engine\runGameLoop;
+use function BrainGames\Engine\runGameLoop;
 
 const RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function play()
+function play(): void
 {
     $getGameData = function () {
         $question = rand(1, 101);

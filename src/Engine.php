@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\engine;
+namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
@@ -17,16 +17,15 @@ function runGameLoop(string $rules, callable $getGameData): void
         [$correctAnswer, $question] = $getGameData();
         line("Question: $question");
         $answer = prompt("Your answer");
-        if ($answer == $correctAnswer) {
-            line("Correct!");
-            if ($i == 2 && $answer == $correctAnswer) {
-                line("Congratulations, $name!");
-                return;
-            }
-        } else {
+        if ($answer != $correctAnswer){
             line("'$answer' is wrong answer ;(. Correct answer was '$correctAnswer'.");
             line("Let's try again, $name!");
             return;
         }
-    }
+        line("Correct!");
+        if (NUMBER_OF_ROUNDS - 1 == $i) {
+            line("Congratulations, $name!");
+            return;
+        }
+    } 
 }

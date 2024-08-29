@@ -2,12 +2,12 @@
 
 namespace BrainGames\GCD;
 
-use function BrainGames\engine\runGameLoop;
+use function BrainGames\Engine\runGameLoop;
 
 const RULES = "Find the greatest common divisor of given numbers.";
 
 
-function play()
+function play(): void
 {
     $getGameData = function () {
         $firstOperand = rand(0, 101);

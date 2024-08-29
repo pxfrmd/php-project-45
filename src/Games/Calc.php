@@ -2,11 +2,11 @@
 
 namespace BrainGames\Calc;
 
-use function BrainGames\engine\runGameLoop;
+use function BrainGames\Engine\runGameLoop;
 
 const RULES = 'What is the result of the expression?';
 
-function play()
+function play(): void
 {
     $getGameData = function () {
         $firstOperand = rand(0, 101);
@@ -19,16 +19,16 @@ function play()
     };
     runGameLoop(RULES, $getGameData);
 }
-function returnResult(int $firstOperand, string $operator, int $secondOperand): int
+function returnResult(int $firstOperand, string $operator, int $secondOperand): ?int
 {
-    switch (true) {
-        case $operator === "+":
+    switch ($operator) {
+        case "+":
             return $firstOperand + $secondOperand;
-        case $operator === "-":
+        case "-":
             return $firstOperand - $secondOperand;
-        case $operator === "*":
+        case "*":
             return $firstOperand * $secondOperand;
         default:
-            return 0;
+            return null;    
     }
 }
