@@ -14,17 +14,14 @@ function play(): void
         $operatorsArr = ["+", "-", "*"];
         $operator = $operatorsArr[rand(0, 2)];
         $question = "$firstOperand $operator $secondOperand";
-        $correctAnswer = returnResult($firstOperand, $operator, $secondOperand);
+        $correctAnswer = match ($operator) {
+            "+" => $firstOperand + $secondOperand,
+            "-" => $firstOperand - $secondOperand,
+            "*" => $firstOperand * $secondOperand,
+            default => null,
+        };
         return [$correctAnswer, $question];
     };
     runGameLoop(RULES, $getGameData);
 }
-function returnResult(int $firstOperand, string $operator, int $secondOperand): ?int
-{
-    match ($operator) {
-        "+" => $firstOperand + $secondOperand,
-        "-" => $firstOperand - $secondOperand,
-        "*" => $firstOperand * $secondOperand,
-        default => null,
-    };
-}
+
