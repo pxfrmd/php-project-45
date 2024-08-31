@@ -24,4 +24,3 @@ function play(): void
     };
     runGameLoop(RULES, $getGameData);
 }
-
