@@ -19,5 +19,5 @@ function play(): void
 
 function isEven(int $question): bool
 {
-    return $question % 2 === 0 ? true : false;
+    return $question % 2 === 0;
 }

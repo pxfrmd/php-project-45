@@ -23,9 +23,6 @@ function runGameLoop(string $rules, callable $getGameData): void
             return;
         }
         line("Correct!");
-        if (NUMBER_OF_ROUNDS - 1 == $i) {
-            line("Congratulations, $name!");
-            return;
-        }
     }
+    line("Congratulations, $name!");
 }

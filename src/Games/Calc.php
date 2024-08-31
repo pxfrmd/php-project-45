@@ -21,14 +21,10 @@ function play(): void
 }
 function returnResult(int $firstOperand, string $operator, int $secondOperand): ?int
 {
-    switch ($operator) {
-        case "+":
-            return $firstOperand + $secondOperand;
-        case "-":
-            return $firstOperand - $secondOperand;
-        case "*":
-            return $firstOperand * $secondOperand;
-        default:
-            return null;
-    }
+    match ($operator) {
+        "+" => $firstOperand + $secondOperand,
+        "-" => $firstOperand - $secondOperand,
+        "*" => $firstOperand * $secondOperand,
+        default => null,
+    };
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\prime;
+namespace BrainGames\Prime;
 
 use function BrainGames\Engine\runGameLoop;
 
