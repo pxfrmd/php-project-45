@@ -14,13 +14,22 @@ function play(): void
         $operatorsArr = ["+", "-", "*"];
         $operator = $operatorsArr[rand(0, 2)];
         $question = "$firstOperand $operator $secondOperand";
-        $correctAnswer = match ($operator) {
-            "+" => $firstOperand + $secondOperand,
-            "-" => $firstOperand - $secondOperand,
-            "*" => $firstOperand * $secondOperand,
-            default => null,
-        };
+        $correctAnswer = returnResult($firstOperand, $operator, $secondOperand);
         return [$correctAnswer, $question];
     };
     runGameLoop(RULES, $getGameData);
+}
+
+function returnResult(int $firstOperand, string $operator, int $secondOperand): ?int
+{
+    switch ($operator) {
+        case "+":
+            return $firstOperand + $secondOperand;
+        case "-":
+            return $firstOperand - $secondOperand;
+        case "*":
+            return $firstOperand * $secondOperand;
+        default:
+            return null;
+    }
 }
